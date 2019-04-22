@@ -1,0 +1,5 @@
+{
+  "port": 3000,
+  "target": "https://rcg.dev",
+  "origin": "https://localhost:4200"
+}

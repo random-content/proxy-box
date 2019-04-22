@@ -1,0 +1,20 @@
+{
+  "name": "proxy-box",
+  "version": "0.0.1",
+  "description": "Proxy for working around cross site shenanigans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "chrisboogs",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "config": "^2.0.1",
+    "express": "^4.16.4",
+    "express-http-proxy": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
