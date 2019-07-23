@@ -12,7 +12,7 @@ Then, create a `local.json` file in the `config` directory. It should look like 
 {
   "httpPort": 4000, // The port to listen on for HTTP
   "httpsPort": 4443, // The port to listen on for HTTPS
-  "target": "https://localhost:3000", // The proxy target
+  "target": "http://localhost:3000", // The proxy target
   "cors": true // enable this to relieve CORS headaches
 }
 ```
