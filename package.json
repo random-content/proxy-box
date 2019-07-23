@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "chrisboogs",
+  "author": "chrisboogz",
   "license": "UNLICENSED",
   "dependencies": {
     "config": "^2.0.1",
-    "express": "^4.16.4",
-    "express-http-proxy": "^1.4.0"
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.5.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.19.1"
   }
 }
