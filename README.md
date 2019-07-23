@@ -8,7 +8,7 @@ npm install
 ```
 
 Then, create a `local.json` file in the `config` directory. It should look like this:
-```json
+```jsonc
 {
   "httpPort": 4000, // The port to listen on for HTTP
   "httpsPort": 4443, // The port to listen on for HTTPS
