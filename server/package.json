@@ -1,0 +1,24 @@
+{
+  "name": "proxy-box-server",
+  "version": "0.0.2",
+  "description": "Containerizable proxy server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/random-content/proxy-box"
+  },
+  "author": "chrisboogz",
+  "license": "MIT",
+  "dependencies": {
+    "convict": "^5.1.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

@@ -1,20 +1,34 @@
 {
   "name": "proxy-box",
-  "version": "0.0.1",
-  "description": "Proxy for working around cross site shenanigans",
+  "version": "0.0.2",
+  "description": "A CLI to create and manage containerized proxy servers for working around HTTP and CORS shenanigans",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "lint": "eslint ."
+  },
+  "bin": {
+    "pxbx": "./cli/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/random-content/proxy-box"
   },
   "author": "chrisboogz",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
-    "config": "^2.0.1",
-    "express": "^4.17.1",
-    "http-proxy-middleware": "^0.19.1"
+    "chalk": "^2.4.2",
+    "child-process-promise": "^2.2.1",
+    "cli-table": "^0.3.1",
+    "lodash": "^4.17.15",
+    "ora": "^3.4.0",
+    "yargs": "^13.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3"
   }
 }

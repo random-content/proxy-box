@@ -1,23 +1,25 @@
 const express = require('express');
-const app = express();
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
-const config = require('config');
 const proxy = require('http-proxy-middleware');
+const config = require('./config');
 
-const key = fs.readFileSync(path.join(__dirname, 'ssl', 'localhost.key'));
-const cert = fs.readFileSync(path.join(__dirname, 'ssl', 'localhost.crt'));
-const credentials = { key, cert };
+const app = express();
 
-const target = config.get('target');
+let target = config.get('target');
 const httpsPort = config.get('httpsPort');
 const httpPort = config.get('httpPort');
 const enableCors = config.get('cors');
 
+const protocolRegexp = /^https?:\/\//;
+if (!protocolRegexp.test(target)) {
+  target = `http://${target}`;
+}
+
 const proxyOptions = {
-  target: target,
+  target,
   changeOrigin: true,
   onProxyRes: (proxyRes, req) => {
     if (enableCors) {
@@ -39,13 +41,13 @@ if (enableCors) {
   });
 }
 
-
 app.use('/**', proxy(proxyOptions));
 
-
-
-
 if (httpsPort) {
+  const key = fs.readFileSync(path.join(__dirname, 'ssl', 'localhost.key'));
+  const cert = fs.readFileSync(path.join(__dirname, 'ssl', 'localhost.crt'));
+  const credentials = { key, cert };
+
   const httpsServer = https.createServer(credentials, app);
   httpsServer.listen(httpsPort, () => {
     console.log(`HTTPS running on port ${httpsPort}`);
