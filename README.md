@@ -149,7 +149,7 @@ pxbx logs -f mybox
 
 This command lists your `proxy-box` instances. It'll tell you the name, status, and configuration of each.
 
-An example command
+An example command:
 ```bash
 # List those instances
 pxbx ls
