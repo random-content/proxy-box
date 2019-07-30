@@ -2,7 +2,7 @@ const { exec } = require('child-process-promise');
 const chalk = require('chalk');
 const Table = require('cli-table');
 
-const cmd = 'docker ps -a --no-trunc --format "{{.Names}}::{{.Status}}::{{.Command}}"';
+const cmd = 'docker ps -a --no-trunc --format "{{.Names}}::{{.Status}}::{{.Command}}" | grep pxbx-';
 
 const tableHeaders = ['Name', 'Status', 'Target', 'HTTP', 'HTTPS', 'CORS'];
 const tableOptions = {
@@ -21,9 +21,13 @@ async function ls(argv) {
 
     result = await p;
   } catch (e) {
-    console.error(`${chalk.red('Error:')} ${e.stderr}`);
-
-    process.exit(1);
+    if (!e.stderr) { // probably just means no results
+      console.log(`No instances to show. Use ${chalk.cyan('pxbx create')} to make some instances`);
+      process.exit();
+    } else {
+      console.error(`${chalk.red('Error:')} ${e.stderr}`);
+      process.exit(1);
+    }
   }
 
   const lines = result.stdout.split('\n');
