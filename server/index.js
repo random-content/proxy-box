@@ -23,7 +23,7 @@ const proxyOptions = {
   changeOrigin: true,
   onProxyRes: (proxyRes, req) => {
     if (enableCors) {
-      proxyRes.headers['Access-Control-Allow-Origin'] = req.get('Host');
+      proxyRes.headers['Access-Control-Allow-Origin'] = req.get('Origin');
       proxyRes.headers['Access-Control-Allow-Credentials'] = 'true';
     }
   }
@@ -31,7 +31,7 @@ const proxyOptions = {
 
 if (enableCors) {
   app.options('/**', (req, res) => {
-    res.set('Access-Control-Allow-Origin', req.get('Host'));
+    res.set('Access-Control-Allow-Origin', req.get('Origin'));
     res.set('Access-Control-Allow-Headers', 'Content-Type');
     res.set('Access-Control-Allow-Credentials', 'true');
     res.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');

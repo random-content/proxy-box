@@ -1,6 +1,6 @@
 {
   "name": "proxy-box-server",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Containerizable proxy server",
   "main": "index.js",
   "scripts": {

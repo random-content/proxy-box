@@ -1,6 +1,6 @@
 {
   "name": "proxy-box",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A CLI to create and manage containerized proxy servers for working around HTTP and CORS shenanigans",
   "main": "index.js",
   "scripts": {
