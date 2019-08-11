@@ -1,6 +1,6 @@
 {
   "name": "proxy-box-server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Containerizable proxy server",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   "author": "chrisboogz",
   "license": "MIT",
   "dependencies": {
+    "containerized": "^1.0.2",
     "convict": "^5.1.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.19.1"

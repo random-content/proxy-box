@@ -9,6 +9,7 @@ const stopCmd = require('./commands/stop');
 const lsCmd = require('./commands/ls');
 const rmCmd = require('./commands/rm');
 const logsCmd = require('./commands/logs');
+const restartCmd = require('./commands/restart');
 
 const init = require('./functions/init');
 const create = require('./functions/create');
@@ -17,6 +18,7 @@ const stop = require('./functions/stop');
 const ls = require('./functions/ls');
 const rm = require('./functions/rm');
 const logs = require('./functions/logs');
+const restart = require('./functions/restart');
 
 yargs.version()
   .help()
@@ -31,7 +33,8 @@ yargs.command(initCmd)
   .command(stopCmd)
   .command(lsCmd)
   .command(rmCmd)
-  .command(logsCmd);
+  .command(logsCmd)
+  .command(restartCmd);
 
 yargs.demandCommand(1, 1, 'One of the commands listed above is required', 'Select a single command')
   .strict(true);
@@ -63,6 +66,9 @@ async function run() {
       break;
     case 'logs':
       await logs(argv);
+      break;
+    case 'restart':
+      await restart(argv);
       break;
     default:
       if (argv.debug) {
