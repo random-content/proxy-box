@@ -107,6 +107,21 @@ An example command:
 pxbx stop mybox
 ```
 
+#### `pxbx restart`
+
+This command restarts your `proxy-box` instances. It also takes a name as its third argument, and that's basically it.
+
+| Flag      | Description                           |
+|-----------|---------------------------------------|
+| `--debug` | Enable debug logging for this command |
+| `--help`  | View help docs for this command       |
+
+An example command:
+```bash
+# Restart an instance named "mybox"
+pxbx restart mybox
+```
+
 #### `pxbx rm`
 
 This command removes your `proxy-box` instances. It takes a name as its third argument, and you can pass it `--force` or `-f` to force remove running instances.
