@@ -1,6 +1,6 @@
 {
   "name": "proxy-box-server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Containerizable proxy server",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "type": "git",
     "url": "https://github.com/random-content/proxy-box"
   },
+  "private": true,
   "author": "chrisboogz",
   "license": "MIT",
   "dependencies": {

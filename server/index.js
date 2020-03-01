@@ -57,6 +57,7 @@ const proxyOptions = {
     if (enableCors) {
       proxyRes.headers['Access-Control-Allow-Origin'] = getOrigin(req);
       proxyRes.headers['Access-Control-Allow-Credentials'] = 'true';
+      proxyRes.headers['Access-Control-Allow-Headers'] = '*';
     }
   }
 };
@@ -64,7 +65,7 @@ const proxyOptions = {
 if (enableCors) {
   app.options('/**', (req, res) => {
     res.set('Access-Control-Allow-Origin', getOrigin(req));
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
+    res.set('Access-Control-Allow-Headers', '*');
     res.set('Access-Control-Allow-Credentials', 'true');
     res.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
     res.set('Allow', 'GET,POST,PUT,DELETE,OPTIONS');

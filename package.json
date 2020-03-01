@@ -1,6 +1,6 @@
 {
   "name": "proxy-box",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A CLI to create and manage containerized proxy servers for working around HTTP and CORS shenanigans",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "yargs": "^13.3.0"
   },
   "devDependencies": {
-    "eslint": "^5.3.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
